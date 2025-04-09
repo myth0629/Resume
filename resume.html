@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>송신화 이력서</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1100;
+      background: teal;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+      height: 100vh;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      align-self: flex-start;
+      transition: left 0.3s ease;
+    }
+
+    .sidebar h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: teal;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .sidebar ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .sidebar ul li a.active {
+      font-weight: bold;
+      color: teal;
+    }
+
+    .sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      background-color: #fff;
+      overflow-y: auto;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #000;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .highlight {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .subinfo {
+      color: #555;
+    }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #ccc;
+      object-fit: cover;
+    }
+
+    a {
+      color: teal;
+      text-decoration: none;
+    }
+
+    .url-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f0f0f0;
+      font-family: monospace;
+      word-break: break-all;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        z-index: 1000;
+        background: white;
+      }
+
+      .sidebar.open {
+        left: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      body {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleMenu()">☰ 메뉴</div>
+  <div class="sidebar">
+    <h3><a href="#basic">기본 정보</a></h3>
+    <ul>
+      <li><a href="#skills">기술 스택</a></li>
+      <li><a href="#career">경력</a></li>
+      <li><a href="#portpolio">포트폴리오</a></li>
+      <li><a href="#education">교육</a></li>
+      <li><a href="#cerificate">수상 및 자격</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="section" id='basic'>
+      <div class="profile">
+        <div>
+          <div class="highlight">송신화 이력서</div>
+          <div class="subinfo">게임 클라이언트 개발자</div>
+          <p>이메일: bruno0629@naver.com</p>
+          <p> 
+            <a href="https://github.com/myth0629" target="_blank">
+              Github 링크
+            </a>
+          </p>
+        </div>
+        <img src="profile.jpg" alt="프로필 사진" class="photo" />
+      </div>
+    </div>
+
+    <div class="section" id="skills">
+      <h2>기술 스택</h2>
+      <p><strong>Front End</strong> : React, HTML5/CSS</p>
+      <p><strong>Back End</strong> : Spring boot, Java</p>
+      <p><strong>게임엔진</strong> : Unity, C#</p>
+      <p><strong>DB</strong> : MySQL</p>
+    </div>
+
+    <div class="section" id="career">
+      <h2>경력</h2>
+      <p>∙ 졸업작품 프로젝트 - 3D 액션 로그라이크 게임 개발 (2025.03 ~ )</p>
+      <p>∙ 유니티 엔진을 이용한 2D 플랫포머 게임 개발</p>
+      <p>∙ 유니티 엔진을 이용한 3D FPS 게임 개발</p>
+      <p>∙ 스프링 부트를 이용한 인스타그램 클론 코딩</p>
+      <p>∙ 톰캣 서버와 api를 활용한 항공권, 호텔 예약 사이트</p>
+    </div>
+
+    <div class="section" id="portpolio">
+        <h2>포트폴리오</h2>
+        <p><strong>졸업 작품 URL</strong> </p>
+        <div class="url-box">
+            https://github.com/3PV-TEAM/DMU_UNITY
+        </div>
+        <p><strong>2D 플랫포머 프로젝트 URL</strong> </p>
+        <div class="url-box">
+            https://github.com/myth0629/Platformer-2024
+        </div>
+        <p><strong>3D FPS 프로젝트 URL</strong> </p>
+        <div class="url-box">
+            https://github.com/myth0629/FPS_Project-2024
+        </div>
+        <p><strong>항공권, 호텔 예약 사이트 URL</strong> </p>
+        <div class="url-box">
+            https://github.com/myth0629/Backend
+        </div>
+        <p><strong>개인 연습작 URL</strong> </p>
+        <div class="url-box">
+            https://github.com/myth0629/Galaxy-Strike
+        </div>
+        <p></p>
+        <div class="url-box">
+            https://github.com/myth0629/Royal-Run
+        </div>
+    </div>
+
+    <div class="section" id="education">
+        <h2>교육</h2>
+        <p><strong>동양미래대학교</strong> - 컴퓨터소프트웨어공학과 (2021.03 ~)</p>
+        <p><strong>배명고등학교</strong> - (2017.03-2020.2)</p>
+    </div>
+
+    <div class="section" id="cerificate">
+        <h2>수상 및 자격</h2>
+        <p><strong>전공동아리 CAN 활동</strong> - 게임팀(2024.03 ~ 2025.2)</p>
+        <p>∙ 2D 플랫포머 게임 개발 (Unity/C#)</p>
+        <p>∙ 3D FPS 게임 개발 (Unity/C#)</p>
+    </div>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.sidebar ul li a');
+    const content = document.querySelector('.content');
+
+    content.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (content.scrollTop >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    function toggleMenu() {
+      document.querySelector('.sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
